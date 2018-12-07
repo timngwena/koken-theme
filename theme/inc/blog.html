@@ -1,0 +1,56 @@
+<koken:load source="essays" filter:featured="true" limit="3">
+	    
+			    <section data-scroll-index='3' id="blog">
+			     
+					      <div class='content'>
+
+							       	 <p class="headline4"> A FEW THOUGHTS </p>
+							         <div class="blog1  grid grid-pad">
+										 
+										 <koken:loop>
+								           		<div class="blog-item col-1-3">
+								           		
+								           		<div class="blog-top">
+									           		<h2 class="sumh2"><koken:link>{{ essay.title }} </koken:link></h2>
+									           		<p class="sum">
+									           			<strong>Published:</strong> <koken:time />
+											   			<koken:categories>
+							                            
+							                                 <strong>Category:</strong>
+							                                 <koken:loop separator=", ">
+							                                      <koken:link>
+							                                           {{ category.title }}
+							                                      </koken:link>
+							                                 </koken:loop>
+							                            
+							                            </koken:categories>
+										           		
+									           		</p>
+								           		</div>
+								           		
+								           		<div class="blog-summary">
+									           		<p class="sum"> {{ essay.excerpt truncate="160" }} <koken:link title="Read {{ essay.title }}">more</koken:link></p>
+								           		</div>
+								           		
+								           		
+							           		</div>
+						           		</koken:loop>
+				
+								   	 </div>  
+			  				          <div class="btn-cont" > <koken:link to="essays" class="blog-button">  VIEW MORE </koken:link> </div>
+							        
+							       <div style="text-align:center;margin-top:20px;">  <i class="icon-chevron-sign-down arrows" data-scroll-nav='4'></i> </div>
+							      
+					      </div>
+			  
+			    </section>
+			    
+			    <koken:else>
+	
+	              <!-- Display fallback message in Site editor only -->
+	              <koken:note>
+	                <p>No posts found. Create some in Text.</p>
+	              </koken:note>
+			  
+	    
+	</koken:load>

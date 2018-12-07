@@ -1,0 +1,15 @@
+    
+    <!-- Scripts -->
+	<koken:asset file="js/scrollIt.min.js" />
+  
+	<script> 
+		$(function() { $.scrollIt(); });
+		$('#hello').addClass('animated bounceInDown'); 
+		$("#hearty").hover(function(){ $('#hearty').addClass('animated pulse');});  
+		$("#pencil").hover(function(){ $('#pencil').addClass('animated wobble');});
+		$("#case").hover(function(){ $('#case').addClass('animated swing');}); 
+		$("#envelope").hover(function(){ $('#envelope').addClass('animated pulse');});
+		$("body").scroll(function(){ $('#envelope').addClass('animated fadeInDown');});       
+	</script>
+  </body>
+</html>

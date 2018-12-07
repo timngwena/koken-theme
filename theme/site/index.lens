@@ -1,0 +1,25 @@
+<koken:include file="inc/header.html" />
+	
+	<!-- Landing  -->
+    <koken:include file="inc/home.html" />
+    
+    <!-- About-->
+	<koken:include file="inc/about.html" />
+
+	<!-- Blog -->   
+	<koken:include file="inc/blog.html" />	    
+
+    <!-- Contact -->
+    <koken:include file="inc/contact.html" />	
+    
+    <!-- About build section
+    <div class='content' data-scroll-index='5' id="aboutbuild"  >
+		
+		<h5 style="text-align:center; margin-top:70px;">About the site</h5>
+		<div style="text-align:center;margin-top:20px;">  <i class="icon-chevron-sign-down arrows2" data-scroll-nav='5'></i> </div>
+		
+	</div>-->  
+<koken:include file="inc/footer.html" />  
+    
+
+

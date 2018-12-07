@@ -1,0 +1,96 @@
+<koken:include file="inc/header-blog.html" />
+
+
+<koken:load>
+
+	<koken:head>
+		<meta property="og:site_name" content="{{ site.title }}" />
+		<meta property="og:title" content="{{ essay.title strip_html="true" }}" />
+		<meta property="og:description" content="{{ essay.excerpt strip_html="true" }}" />
+		<meta property="og:url" content="{{ essay.url }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="{{ essay.featured_image.presets.medium_large.url }}" />
+		<meta property="og:image:width" content="{{ essay.featured_image.presets.medium_large.width }}" />
+		<meta property="og:image:height" content="{{ essay.featured_image.presets.medium_large.height }}" />
+		<meta name="medium" content="article" />
+		<koken:not empty="profile.twitter">
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:title" content="{{ essay.title truncate="70" }}" />
+			<meta name="twitter:site" content="@{{ profile.twitter }}" />
+			<meta name="twitter:creator" content="@{{ profile.twitter }}" />
+			<meta name="twitter:description" content="{{ essay.excerpt truncate="200" strip_html="true" }}" />
+			<meta name="twitter:image" content="{{ essay.featured_image.presets.medium_large.url }}" />
+		</koken:not>
+	</koken:head>
+
+
+	<!-- Blog -->
+    
+    <section data-scroll-index='3' id="blogpost">
+     
+	      <div class='content' style="width:90%; margin:auto;">
+			     
+			    <div class="blog-post">
+		
+						<div class="btn-cont2" > 
+							
+							<koken:link to="essays" bind_to_key="up" class="blog-button2 btn-left">BLOG POSTS</koken:link>
+							
+							
+							
+							
+
+							
+						<div style="clear: both;"></div> 
+						</div>
+		
+								<article>
+							
+									<header>
+										<h1>
+											<koken:link>
+												{{ page.title }}
+											</koken:link>
+										</h1>
+										
+										<div class="metab">
+										<p> 
+											<strong>Published:</strong> <koken:time />
+											
+											<strong> |</strong>
+											<koken:if empty="profile.twitter"><a href="https://twitter.com/intent/tweet?text={{ essay.title url_encode="true" }}&url={{ essay.url url_encode="true" }}" title="Share {{ essay.title url_encode="true" }} on Twitter" target="_blank"><koken:else><a href="https://twitter.com/intent/tweet?text={{ essay.title url_encode="true" }}&url={{ essay.url url_encode="true" }}&via={{ profile.twitter }}" title="Share {{ essay.title url_encode="true" }} on Twitter" target="_blank"></koken:if><i class="icon-twitter-sign share-icon"></i></a><a href="https://www.facebook.com/sharer.php?u={{ essay.url url_encode="true" }}" title="Share {{ essay.title url_encode="true" }} on Facebook" target="_blank"><i class="icon-facebook-sign share-icon"></i></a><a href="https://plus.google.com/share?url={{ essay.url url_encode="true" }}" title="Share {{ essay.url url_encode="true" }} on Google+" target="_blank"><i class="icon-google-plus-sign share-icon"></i></a></li>
+										</p>
+										</div>
+									</header>
+					
+									<div class="article-body">
+										{{ page.content }}
+									</div>
+					
+									<footer>
+
+										<div class="metab">
+										<p><koken:link>Permalink </koken:link>
+										<strong> // Share: </strong>
+											<koken:if empty="profile.twitter"><a class="sharing-link" href="https://twitter.com/intent/tweet?text={{ essay.title url_encode="true" }}&url={{ essay.url url_encode="true" }}" title="Share {{ essay.title url_encode="true" }} on Twitter" target="_blank"><koken:else><a href="https://twitter.com/intent/tweet?text={{ essay.title url_encode="true" }}&url={{ essay.url url_encode="true" }}&via={{ profile.twitter }}" title="Share {{ essay.title url_encode="true" }} on Twitter" target="_blank"></koken:if> <i class="icon-twitter-sign share-icon"></i>TWITTER </a><a href="https://www.facebook.com/sharer.php?u={{ essay.url url_encode="true" }}" title="Share {{ essay.title url_encode="true" }} on Facebook" target="_blank"> <i class="icon-facebook-sign share-icon"></i>FACEBOOK </a><a href="https://plus.google.com/share?url={{ essay.url url_encode="true" }}" title="Share {{ essay.url url_encode="true" }} on Google+" target="_blank"> <i class="icon-google-plus-sign share-icon"></i>GOOGLE+ </a></li>
+										</p>
+										</div>
+					
+								
+					
+									</footer>
+						
+								</article>
+						
+					<!-- Back top top 	<div style="text-align:center;margin-top:20px;">  <i class="icon-chevron-sign-down arrows" data-scroll-nav='4'></i> </div> -->
+			      
+				</div>
+				
+	      </div>	
+  
+    </section>
+
+</koken:load>
+
+
+<koken:include file="inc/footer.html" />
